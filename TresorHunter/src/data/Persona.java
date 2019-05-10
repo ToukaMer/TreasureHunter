@@ -7,7 +7,7 @@ public class Persona extends Case {
 	private int latitude;
 	private int longitude;
 	private Life life;
-	private ArrayList<Tresor> inventory;
+	private ArrayList<Treasure> inventory;
 	private int type;
 
 	public Persona() {
@@ -45,12 +45,12 @@ public class Persona extends Case {
 	}
 
 
-	public ArrayList<Tresor> getInventory() {
+	public ArrayList<Treasure> getInventory() {
 		return inventory;
 	}
 
 
-	public void setInventory(ArrayList<Tresor> inventory) {
+	public void setInventory(ArrayList<Treasure> inventory) {
 		this.inventory = inventory;
 	}
 	

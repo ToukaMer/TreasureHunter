@@ -7,13 +7,13 @@ import data.Constants;
 import data.Empty;
 import data.Persona;
 import data.Trap;
-import data.Tresor;
+import data.Treasure;
 
 public class Grid {
 	private Case[][] cases;
 	private Persona persona;
 	private ArrayList<Trap> traps;
-	private ArrayList<Tresor> tresors;
+	private ArrayList<Treasure> treasures;
 	private Empty empty;
 
 	public Grid() {
@@ -44,12 +44,12 @@ public class Grid {
 		this.traps = traps;
 	}
 
-	public ArrayList<Tresor> getTresors() {
-		return tresors;
+	public ArrayList<Treasure> getTreasures() {
+		return treasures;
 	}
 
-	public void setTresors(ArrayList<Tresor> tresors) {
-		this.tresors = tresors;
+	public void setTreasures(ArrayList<Treasure> treasures) {
+		this.treasures = treasures;
 	}
 
 	public Empty getEmpty() {
@@ -89,17 +89,17 @@ public class Grid {
 		}
 	}
 	
-	public void initializeTresors() {
+	public void initializeTreasures() {
 		int randomLongitude;
 		int randomLatitude;
 		int index;
-		tresors = new ArrayList<>();
+		treasures = new ArrayList<>();
 		for(index=0;index<Constants.TRESOR_AMOUNT;index++) {
 			randomLongitude = (int)(Math.random() * (Constants.GRID_HEIGHT - 1))+1;
 			randomLatitude = (int)(Math.random() * (Constants.GRID_LENGTH - 1))+1;
-			Tresor tresor = new Tresor(randomLatitude,randomLongitude);
-			cases[randomLongitude][randomLatitude] = tresor;
-			tresors.add(tresor);
+			Treasure treasure = new Treasure(randomLatitude,randomLongitude);
+			cases[randomLongitude][randomLatitude] = treasure;
+			treasures.add(treasure);
 		}
 	}
 	
@@ -107,7 +107,7 @@ public class Grid {
 		initializeCases();
 		initializePersona();
 		initializeTraps();
-		initializeTresors();
+		initializeTreasures();
 	}
 	
 	public void displayGrid() {

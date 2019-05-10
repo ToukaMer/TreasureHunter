@@ -1,16 +1,16 @@
 package data;
 
-public class Tresor extends Case {
+public class Treasure extends Case {
 	
 	private int latitude;
 	private int longitude;
 	private int type;
 	
 	
-	public Tresor(int latitude, int longitude) {
+	public Treasure(int latitude, int longitude) {
 		this.latitude = latitude;
 		this.longitude = longitude;
-		this.type = Constants.IS_TRESOR;
+		this.type = Constants.IS_TREASURE;
 	}
 
 

@@ -13,5 +13,5 @@ public class Constants {
 	public static final int IS_EMPTY = 0;
 	public static final int IS_PERSONA = 1;
 	public static final int IS_TRAP = 2;
-	public static final int IS_TRESOR = 3;
+	public static final int IS_TREASURE = 3;
 }
