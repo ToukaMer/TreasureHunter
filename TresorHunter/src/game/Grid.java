@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import data.Case;
 import data.Constants;
 import data.Empty;
-import data.Persona;
+import data.Hero;
 import data.Trap;
 import data.Treasure;
 
 public class Grid {
 	private Case[][] cases;
-	private Persona persona;
+	private Hero hero;
 	private ArrayList<Trap> traps;
 	private ArrayList<Treasure> treasures;
 	private Empty empty;
@@ -28,12 +28,12 @@ public class Grid {
 		this.cases = cases;
 	}
 	
-	public Persona getPersona() {
-		return persona;
+	public Hero getHero() {
+		return hero;
 	}
 
-	public void setPersona(Persona persona) {
-		this.persona = persona;
+	public void setHero(Hero hero) {
+		this.hero = hero;
 	}
 
 	public ArrayList<Trap> getTraps() {
@@ -70,9 +70,9 @@ public class Grid {
 		}
 	}
 	
-	public void initializePersona() {
-		persona = new Persona();
-		cases[Constants.DEPARTURE_LONGITUDE][Constants.DEPARTURE_LATITUDE] = persona;
+	public void initializeHero() {
+		hero = new Hero();
+		cases[Constants.DEPARTURE_LONGITUDE][Constants.DEPARTURE_LATITUDE] = hero;
 	}
 	
 	public void initializeTraps() {
@@ -105,7 +105,7 @@ public class Grid {
 	
 	public void initializeGrid() {
 		initializeCases();
-		initializePersona();
+		initializeHero();
 		initializeTraps();
 		initializeTreasures();
 	}

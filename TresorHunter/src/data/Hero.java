@@ -1,15 +1,15 @@
 package data;
 
 
-public class Persona extends Case {
+public class Hero extends Case {
 	
 	private int latitude;
 	private int longitude;
 	private Life life;
 	private Inventory inventory;
 	private int type;
-	public Persona() {
-		initializePersona();
+	public Hero() {
+		initializeHero();
 	}
 
 	public int getLatitude() {
@@ -59,12 +59,12 @@ public class Persona extends Case {
 	}
 
 
-	public void initializePersona() {
+	public void initializeHero() {
 		latitude = Constants.DEPARTURE_LATITUDE;
 		longitude = Constants.DEPARTURE_LONGITUDE;
 		life = new Life(Constants.STARTING_NUMBER_OF_LIVES);
 		inventory = new Inventory(Constants.STARTING_NUMBER_OF_COINS);
-		type = Constants.IS_PERSONA;
+		type = Constants.IS_HERO;
 	}
 
 	

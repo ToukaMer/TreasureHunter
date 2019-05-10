@@ -1,5 +1,7 @@
 package game;
 
+import data.Constants;
+
 public class StartGame {
 	private Grid grid;
 	private Movement movement;
@@ -15,16 +17,16 @@ public class StartGame {
 		movementInstructions();
 		information();
 		grid.displayGrid();
-		while(((grid.getPersona().getLife().getValue())>0)&&((grid.getPersona().getInventory().getCoinsCollected())<5)) {
+		while(((grid.getHero().getLife().getValue())>0)&&((grid.getHero().getInventory().getCoinsCollected())<Constants.COINS_AMOUNT_TO_WIN)) {
 			movement.move();
 			movementInstructions();
 			information();
 			grid.displayGrid();
 		}
-		if((grid.getPersona().getLife().getValue())==0){
+		if((grid.getHero().getLife().getValue())==0){
 			System.out.println("You lost");
 		}
-		else if((grid.getPersona().getInventory().getCoinsCollected())==5) {
+		else if((grid.getHero().getInventory().getCoinsCollected())==5) {
 			System.out.println("Congratulations !! you won");
 		}
 	}
@@ -42,8 +44,8 @@ public class StartGame {
 	}
 	
 	public void information() {
-		System.out.print("Life = "+grid.getPersona().getLife().getValue()+"");
-		System.out.println("  |  Treasures collected = "+grid.getPersona().getInventory().getCoinsCollected()+"");
+		System.out.print("Life = "+grid.getHero().getLife().getValue()+"");
+		System.out.println("  |  Treasures collected = "+grid.getHero().getInventory().getCoinsCollected()+"");
 	}
 	
 }

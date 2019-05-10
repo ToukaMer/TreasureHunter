@@ -39,19 +39,19 @@ public class Movement {
 	}
 	
 	public void moveRight() {
-		int latitude = grid.getPersona().getLatitude();
-		int longitude = grid.getPersona().getLongitude();
+		int latitude = grid.getHero().getLatitude();
+		int longitude = grid.getHero().getLongitude();
 		if(latitude<Constants.GRID_LENGTH-1) {
 			grid.getCases()[longitude][latitude] = grid.getEmpty();
 			latitude++;
 			if(grid.getCases()[longitude][latitude].getType()==Constants.IS_TRAP) {
-				grid.getPersona().getLife().decrementLife();
+				grid.getHero().getLife().decrementLife();
 			}
 			else if(grid.getCases()[longitude][latitude].getType()==Constants.IS_TREASURE) {
-				grid.getPersona().getInventory().incrementCoins();
+				grid.getHero().getInventory().incrementCoins();
 			}
-			grid.getCases()[longitude][latitude] = grid.getPersona(); 
-			grid.getPersona().setLatitude(latitude);
+			grid.getCases()[longitude][latitude] = grid.getHero(); 
+			grid.getHero().setLatitude(latitude);
 		}
 		else {
 			System.out.println("You can no longer move right");
@@ -59,19 +59,19 @@ public class Movement {
 	}
 	
 	public void moveLeft() {
-		int latitude = grid.getPersona().getLatitude();
-		int longitude = grid.getPersona().getLongitude();
+		int latitude = grid.getHero().getLatitude();
+		int longitude = grid.getHero().getLongitude();
 		if(latitude>0) {
 			grid.getCases()[longitude][latitude] = grid.getEmpty();
 			latitude--;
 			if(grid.getCases()[longitude][latitude].getType()==Constants.IS_TRAP) {
-				grid.getPersona().getLife().decrementLife();
+				grid.getHero().getLife().decrementLife();
 			}
 			else if(grid.getCases()[longitude][latitude].getType()==Constants.IS_TREASURE) {
-				grid.getPersona().getInventory().incrementCoins();
+				grid.getHero().getInventory().incrementCoins();
 			}
-			grid.getCases()[longitude][latitude] = grid.getPersona(); 
-			grid.getPersona().setLatitude(latitude);
+			grid.getCases()[longitude][latitude] = grid.getHero(); 
+			grid.getHero().setLatitude(latitude);
 		}
 		else {
 			System.out.println("You can't move left");
@@ -79,19 +79,19 @@ public class Movement {
 	}
 	
 	public void moveUp() {
-		int latitude = grid.getPersona().getLatitude();
-		int longitude = grid.getPersona().getLongitude();
+		int latitude = grid.getHero().getLatitude();
+		int longitude = grid.getHero().getLongitude();
 		if(longitude>0) {
 			grid.getCases()[longitude][latitude] = grid.getEmpty();
 			longitude--;
 			if(grid.getCases()[longitude][latitude].getType()==Constants.IS_TRAP) {
-				grid.getPersona().getLife().decrementLife();
+				grid.getHero().getLife().decrementLife();
 			}
 			else if(grid.getCases()[longitude][latitude].getType()==Constants.IS_TREASURE) {
-				grid.getPersona().getInventory().incrementCoins();
+				grid.getHero().getInventory().incrementCoins();
 			}
-			grid.getCases()[longitude][latitude] = grid.getPersona(); 
-			grid.getPersona().setLongitude(longitude);
+			grid.getCases()[longitude][latitude] = grid.getHero(); 
+			grid.getHero().setLongitude(longitude);
 		}
 		else {
 			System.out.println("You can't move up");
@@ -99,19 +99,19 @@ public class Movement {
 	}
 	
 	public void moveDown() {
-		int latitude = grid.getPersona().getLatitude();
-		int longitude = grid.getPersona().getLongitude();
+		int latitude = grid.getHero().getLatitude();
+		int longitude = grid.getHero().getLongitude();
 		if(longitude<Constants.GRID_HEIGHT-1) {
 			grid.getCases()[longitude][latitude] = grid.getEmpty();
 			longitude++;
 			if((grid.getCases()[longitude][latitude].getType())==Constants.IS_TRAP) {
-				grid.getPersona().getLife().decrementLife();
+				grid.getHero().getLife().decrementLife();
 			}
 			else if((grid.getCases()[longitude][latitude].getType())==Constants.IS_TREASURE) {
-				grid.getPersona().getInventory().incrementCoins();
+				grid.getHero().getInventory().incrementCoins();
 			}
-			grid.getCases()[longitude][latitude] = grid.getPersona(); 
-			grid.getPersona().setLongitude(longitude);
+			grid.getCases()[longitude][latitude] = grid.getHero(); 
+			grid.getHero().setLongitude(longitude);
 		}
 		else {
 			System.out.println("You can no longer move down");
