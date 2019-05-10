@@ -1,19 +1,16 @@
 package data;
 
-import java.util.ArrayList;
 
 public class Persona extends Case {
 	
 	private int latitude;
 	private int longitude;
 	private Life life;
-	private ArrayList<Treasure> inventory;
+	private Inventory inventory;
 	private int type;
-
 	public Persona() {
 		initializePersona();
 	}
-
 
 	public int getLatitude() {
 		return latitude;
@@ -43,17 +40,15 @@ public class Persona extends Case {
 	public void setLife(Life life) {
 		this.life = life;
 	}
-
-
-	public ArrayList<Treasure> getInventory() {
+	
+	public Inventory getInventory() {
 		return inventory;
 	}
 
-
-	public void setInventory(ArrayList<Treasure> inventory) {
+	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
 	}
-	
+
 	public int getType() {
 		return type;
 	}
@@ -68,7 +63,7 @@ public class Persona extends Case {
 		latitude = Constants.DEPARTURE_LATITUDE;
 		longitude = Constants.DEPARTURE_LONGITUDE;
 		life = new Life(Constants.STARTING_NUMBER_OF_LIVES);
-		inventory = null;
+		inventory = new Inventory(Constants.STARTING_NUMBER_OF_COINS);
 		type = Constants.IS_PERSONA;
 	}
 

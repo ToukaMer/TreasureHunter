@@ -1,11 +1,11 @@
 package test;
 
-import game.Grid;
+import game.StartGame;
 
 
 public class TestGrid {
 	public static void main(String[] args) {
-		Grid grid = new Grid();
-		grid.displayGrid();
+		StartGame game = new StartGame();
+		game.gameProcess();
 	}
 }

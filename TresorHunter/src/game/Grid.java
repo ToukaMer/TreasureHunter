@@ -94,7 +94,7 @@ public class Grid {
 		int randomLatitude;
 		int index;
 		treasures = new ArrayList<>();
-		for(index=0;index<Constants.TRESOR_AMOUNT;index++) {
+		for(index=0;index<Constants.TREASURE_AMOUNT;index++) {
 			randomLongitude = (int)(Math.random() * (Constants.GRID_HEIGHT - 1))+1;
 			randomLatitude = (int)(Math.random() * (Constants.GRID_LENGTH - 1))+1;
 			Treasure treasure = new Treasure(randomLatitude,randomLongitude);
